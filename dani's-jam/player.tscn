@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cfudcyrdohirb"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="States" type="Node" parent="."]
+
+[node name="Normal" type="Node" parent="States"]
+
+[node name="Magnet" type="Node" parent="States"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

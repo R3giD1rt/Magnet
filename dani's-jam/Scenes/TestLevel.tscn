@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://pk03p62vs4sw"]
+
+[ext_resource type="PackedScene" uid="uid://s3a2ae6qblo7" path="res://Scenes/player.tscn" id="1_shgkq"]
+[ext_resource type="PackedScene" uid="uid://cwbw37h2330ii" path="res://Scenes/magnet.tscn" id="2_ujyaq"]
+[ext_resource type="PackedScene" uid="uid://b6s3vemreqfwe" path="res://Scenes/MagneticObject.tscn" id="3_oy2kj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8uh7m"]
+distance = -431.0
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_shgkq")]
+position = Vector2(-13, 366)
+
+[node name="Anchor" type="Node2D" parent="Player"]
+
+[node name="Magnet" parent="Player/Anchor" instance=ExtResource("2_ujyaq")]
+position = Vector2(30, 0)
+scale = Vector2(0.25, 0.25)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(5, 5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_8uh7m")
+
+[node name="Magnetobjec" type="Node" parent="."]
+
+[node name="RigidBody2D" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(60, 413)
+Polarity = "+"
+
+[node name="RigidBody2D3" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(-97, 328)
+Polarity = "+"
+
+[node name="RigidBody2D4" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(109, 415)
+Polarity = "+"
+
+[node name="RigidBody2D5" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(109, 415)
+Polarity = "+"
+
+[node name="RigidBody2D2" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(-59, 408)
+Polarity = "-"
+
+[node name="RigidBody2D6" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(-63, 352)
+Polarity = "-"
+
+[node name="RigidBody2D7" parent="Magnetobjec" instance=ExtResource("3_oy2kj")]
+position = Vector2(-122, 387)
+Polarity = "-"

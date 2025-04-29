@@ -10,13 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Dani's jam"
+config/name="Magnet"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Images/icon.svg"
 
 [dotnet]
 
-project/assembly_name="Dani-s jam"
+project/assembly_name="Magnet"
+
+[global_group]
+
+Magnetobjec=""
 
 [rendering]
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwbw37h2330ii"]
+
+[ext_resource type="Script" uid="uid://cqg5tqx6bkwyr" path="res://Scripts/magnet.gd" id="1_d1rpa"]
+[ext_resource type="Texture2D" uid="uid://im72o87n30s1" path="res://Images/Magnet1.png" id="1_wu1kv"]
+[ext_resource type="Script" uid="uid://djq3001q55qsa" path="res://Scripts/MagnetFuncHandler.gd" id="3_llm5u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d1rpa"]
+radius = 180.025
+
+[node name="Magnet" type="Node2D"]
+script = ExtResource("1_d1rpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_wu1kv")
+flip_h = true
+
+[node name="MagnetArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("3_llm5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MagnetArea"]
+position = Vector2(177, 0)
+shape = SubResource("CircleShape2D_d1rpa")
+
+[node name="Location" type="Node2D" parent="MagnetArea"]
+position = Vector2(150, 0)
